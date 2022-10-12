@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Jquery Start -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Jquery end -->
+
+    <!-- CSS Start -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.3/css/all.min.css"
+      integrity="sha512-f2MWjotY+JCWDlE0+QAshlykvZUtIm35A6RHwfYZPdxKgLJpL8B+VVxjpHJwZDsZaWdyHVhlIHoblFYGkmrbhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <!-- CSS End -->
+
+    <title>Leave Policy Configuration</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row pt-5">
+        <div class="col-12">
+          <h6 class="heading" style="border: none">
+            Leave Policy Configuration
+          </h6>
+        </div>
+      </div>
+
+      <!-- Leave Policy Configuration -->
+      <div class="card">
+        <form class="row">
+          <div class="col-6 form-group my-2">
+            <label class="font-sm">Policy Title</label>
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Ex. policy Title.."
+            />
+          </div>
+
+          <div class="col-4 form-group my-2">
+            <label class="font-sm">Leave Type</label>
+            <select class="form-control">
+              <option selected disabled>-- Select Leave Type --</option>
+              <option>Annual</option>
+              <option>Casual</option>
+              <option>Compensatory</option>
+            </select>
+          </div>
+
+          <div class="col-2 form-group my-2">
+            <label class="font-sm">Policy Code</label>
+            <input class="form-control" type="number" placeholder="Ex. 1025" />
+          </div>
+
+          <div class="col-12 form-group my-2">
+            <label class="font-sm">Description</label>
+
+            <textarea
+              class="form-control"
+              placeholder="Ex. Lorem Ipsum Dolor Sit.."
+              name=""
+              id=""
+              cols="30"
+              rows="3"
+            ></textarea>
+          </div>
+        </form>
+      </div>
+
+      <!-- Validation -->
+      <div class="card">
+        <div class="row">
+          <div class="col-12">
+            <h6 class="sub-title">Validation</h6>
+          </div>
+        </div>
+        <form class="">
+          <div class="row">
+            <div class="col-4 form-group my-2">
+              <label class="font-sm">Gender</label>
+              <select class="form-control">
+                <option selected disabled>-- Select Gender --</option>
+                <option>All</option>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </div>
+
+            <div class="col-4 form-group my-2">
+              <label class="font-sm">Marital Status</label>
+              <select class="form-control">
+                <option selected disabled>-- Select Marital Status --</option>
+                <option>All</option>
+                <option>Married</option>
+                <option>Unmarried</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-4 form-group my-2">
+              <label class="font-sm">Requirement for Supporting Document</label>
+              <select
+                class="form-control"
+                id="requirementForSupportingDocument"
+              >
+                <option selected disabled>-- Select Option --</option>
+                <option value="1">Not Required</option>
+                <option value="2">Strictly Required</option>
+                <option value="3">Duration Based</option>
+              </select>
+            </div>
+
+            <div
+              class="col-4 form-group my-2"
+              id="minDurationForSupportingDocumentBlock"
+            >
+              <label class="font-sm"
+                >Min Duration for Supporting Document in day(s)</label
+              >
+              <input class="form-control" type="number" placeholder="Ex. 2" />
+            </div>
+
+            <div class="col-4 form-group my-2">
+              <label class="font-sm"
+                >Min Duration for Prior Leave Apply in day(s)</label
+              >
+              <input class="form-control" type="number" placeholder="Ex. 5" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-4 form-group my-2">
+              <div class="form-check" style="padding-top: 35px">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="hasLifeCycle"
+                />
+                <label class="form-check-label font-sm" for="hasLifeCycle">
+                  Has Lifecycle Limit
+                </label>
+              </div>
+            </div>
+
+            <div class="col-4 form-group my-2" id="lifecycleLimitBlock">
+              <label class="font-sm">Lifecycle Limit in Day(s)</label>
+              <input class="form-control" type="number" placeholder="Ex. 5" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-4 form-group my-0">
+              <div class="form-check" style="padding-top: 25px">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="isDescriptionReqired"
+                />
+                <label
+                  class="form-check-label font-sm"
+                  for="isDescriptionReqired"
+                >
+                  Is Description Required
+                </label>
+              </div>
+            </div>
+
+            <div class="col-4 form-group my-0">
+              <div class="form-check" style="padding-top: 25px">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="isAddressOnLeaveRequired"
+                />
+                <label
+                  class="form-check-label font-sm"
+                  for="isAddressOnLeaveRequired"
+                >
+                  Is Address on Leave Required
+                </label>
+              </div>
+            </div>
+
+            <div class="col-4 form-group my-0">
+              <div class="form-check" style="padding-top: 25px">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="isPhoneNumberRequired"
+                />
+                <label
+                  class="form-check-label font-sm"
+                  for="isPhoneNumberRequired"
+                >
+                  Is Phone Number on Leave Required
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-4 form-group my-0">
+              <div class="form-check" style="padding-top: 25px">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="isConscecutiveLeave"
+                />
+                <label
+                  class="form-check-label font-sm"
+                  for="isConscecutiveLeave"
+                >
+                  Is Consecutive Leave in Lifecycle
+                </label>
+              </div>
+            </div>
+
+            <div class="col-4 form-group my-0">
+              <div class="form-check" style="padding-top: 25px">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="isBalanceCheckRequired"
+                />
+                <label
+                  class="form-check-label font-sm"
+                  for="isBalanceCheckRequired"
+                >
+                  Is Balance Check Required
+                </label>
+              </div>
+            </div>
+
+            <div class="col-4 form-group my-0">
+              <div class="form-check" style="padding-top: 25px">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="canAppliedByAnyone"
+                />
+                <label
+                  class="form-check-label font-sm"
+                  for="canAppliedByAnyone"
+                >
+                  Can Applied by Employee
+                </label>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Allocation Criteria -->
+      <div class="card">
+        <div class="row">
+          <div class="col-12">
+            <p class="sub-title">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="hasAllocationCriteria"
+              />
+              <label for="hasAllocationCriteria">
+                &nbsp;&nbsp;&nbsp; Allocation Criteria</label
+              >
+            </p>
+          </div>
+        </div>
+        <form class="row" id="allocationCriteriaBlock">
+          <div class="col-4 form-group my-2">
+            <div class="form-check" style="padding-top: 35px">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="hasAutoAllocationFromJoining"
+              />
+              <label
+                class="form-check-label font-sm"
+                for="hasAutoAllocationFromJoining"
+              >
+                Has Auto Allocation from Joining
+              </label>
+            </div>
+          </div>
+
+          <div class="col-4 form-group my-2">
+            <label class="font-sm">Allocation Type</label>
+            <select class="form-control" id="allocationType">
+              <option selected disabled>-- Select allocation type --</option>
+              <option>Calender Year Advance</option>
+              <option>Calender Month Advance</option>
+              <option>Per Day Fixed Factor</option>
+            </select>
+          </div>
+
+          <div class="col-4 form-group my-2 perCalanderYearAllocation">
+            <label class="font-sm">Per Calender Year Allocation</label>
+            <input class="form-control" type="number" placeholder="Ex. 5000" />
+          </div>
+
+          <div class="col-4 form-group my-2 fixedFactorAllocation">
+            <div class="form-check" style="padding-top: 35px">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="allocationOnLeave"
+              />
+              <label class="form-check-label font-sm" for="allocationOnLeave">
+                Has Fixed Factor Allocation on Leave Day
+              </label>
+            </div>
+          </div>
+
+          <div class="col-4 form-group my-2 fixedFactorAllocation">
+            <div class="form-check" style="padding-top: 35px">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="allocationOnHoliday"
+              />
+              <label class="form-check-label font-sm" for="allocationOnHoliday">
+                Has Fixed Factor Allocation on Holiday
+              </label>
+            </div>
+          </div>
+
+          <div class="col-4 form-group my-2 fixedFactorAllocation">
+            <label class="font-sm">Allocation Factor</label>
+            <input class="form-control" type="number" placeholder="Ex. 5000" />
+          </div>
+        </form>
+      </div>
+
+      <!-- Expiration Criteria -->
+      <div class="card">
+        <div class="row">
+          <div class="col-12">
+            <p class="sub-title">
+              <label for="hasRegularHoliday">Expiration Criteria</label>
+            </p>
+          </div>
+        </div>
+        <form class="row">
+          <div class="col-4 form-group my-2">
+            <div class="form-check" style="padding-top: 35px">
+              <input class="form-check-input" type="checkbox" id="hasExpiry" />
+              <label class="form-check-label font-sm" for="hasExpiry">
+                Has Expiry
+              </label>
+            </div>
+          </div>
+
+          <div class="col-4 form-group my-2" id="willExpireInDaysBlock">
+            <label class="font-sm">Will Expire in Day(s)</label>
+            <input class="form-control" type="number" placeholder="Ex. 5" />
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <div class="row">
+          <div class="col-12">
+            <h6 class="sub-title">Auto Deduction Criteria</h6>
+          </div>
+        </div>
+        <form class="row">
+          <div class="col-4 form-group my-2">
+            <div class="form-check" style="padding-top: 35px">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="isAutoDeductable"
+              />
+              <label class="form-check-label font-sm" for="isAutoDeductable">
+                Is Auto deductible
+              </label>
+            </div>
+          </div>
+
+          <div class="col-4 form-group my-2" id="autoDeductionPriorityBlock">
+            <label class="font-sm">Auto Deduction Priority</label>
+            <input class="form-control" type="number" placeholder="Ex. 1-100" />
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <div class="row">
+          <div class="col-12">
+            <h6 class="sub-title">Duration Criteria</h6>
+          </div>
+        </div>
+        <form class="row">
+          <div class="col-4 form-group my-2">
+            <div class="form-check" style="padding-top: 35px">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="isHalfdayAllowed"
+              />
+              <label class="form-check-label font-sm" for="isHalfdayAllowed">
+                Is Half Day Allowed
+              </label>
+            </div>
+          </div>
+
+          <div class="col-4 form-group my-2" id="leaveDurationStartegyBlock">
+            <label class="font-sm">Leave Duration Strategy</label>
+            <select class="form-control">
+              <option selected disabled>-- Select Strategy --</option>
+              <option>Working Day</option>
+              <option>Working Day with Sandwich Role</option>
+              <option>Straight Date to Date Calculation</option>
+            </select>
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <div class="row">
+          <div class="col-12">
+            <h6 class="sub-title">Monthly Limit Criteria</h6>
+          </div>
+        </div>
+        <form class="row">
+          <div class="col-4 form-group my-2">
+            <div class="form-check" style="padding-top: 35px">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="hasMonthlyMaxLimit"
+              />
+              <label class="form-check-label font-sm" for="hasMonthlyMaxLimit">
+                Has Monthly Max Limit
+              </label>
+            </div>
+          </div>
+
+          <div class="col-4 form-group my-2" id="monthlyMaxLimitBlock">
+            <label class="font-sm">Monthly Max Limit</label>
+            <input class="form-control" type="number" placeholder="Ex. 1-100" />
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <div class="row">
+          <div class="col-12">
+            <h6 class="sub-title">Salary Impact</h6>
+          </div>
+        </div>
+        <form class="row">
+          <div class="col-4 form-group my-2">
+            <div class="form-check" style="padding-top: 35px">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="isPaidLeave"
+              />
+              <label class="form-check-label font-sm" for="isPaidLeave">
+                Is Paid Leave
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <div class="row">
+          <div class="col-12">
+            <p class="sub-title">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="encashmentCriteria"
+              />
+              <label for="encashmentCriteria">
+                &nbsp;&nbsp;&nbsp; Encashment Criteria</label
+              >
+            </p>
+          </div>
+        </div>
+        <form class="" id="encashmentCriteriaBlock">
+          <div class="row">
+            <div class="col-4 form-group my-2">
+              <div class="form-check" style="padding-top: 35px">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="isEncashableEachYear"
+                />
+                <label
+                  class="form-check-label font-sm"
+                  for="isEncashableEachYear"
+                >
+                  Is Encashable Each year
+                </label>
+              </div>
+            </div>
+
+            <div class="col-4 form-group my-2" id="yearlyForwardLimitBlock">
+              <label class="font-sm">Yearly Forwarding Limit</label>
+              <input class="form-control" type="number" placeholder="Ex. 50" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-4 form-group my-2">
+              <div class="form-check" style="padding-top: 35px">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="isForwardable"
+                />
+                <label class="form-check-label font-sm" for="isForwardable">
+                  Is Forwardable
+                </label>
+              </div>
+            </div>
+
+            <div
+              class="col-4 form-group my-2"
+              id="forwardingLimitOnLifetimeBlock"
+            >
+              <label class="font-sm">Forwarding Limit on Lifetime</label>
+              <input class="form-control" type="number" placeholder="Ex. 150" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Scripts Start -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./index.js"></script>
+    <!-- Scripts End -->
+  </body>
+</html>
